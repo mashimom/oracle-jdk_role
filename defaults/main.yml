@@ -1,0 +1,4 @@
+---
+# defaults file for oracle-jdk
+JDK_VERSION: 8
+JDK_AS_DEFAULT: true
