@@ -12,12 +12,12 @@
   become: yes
 
 - name: Enable JDK {{ JDK_VERSION }} unattended install config
-  debconf: name='oracle-java{{ JDK_VERSION }}-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
+  debconf: "name='oracle-java{{ JDK_VERSION }}-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'"
   become: yes
 
-- apt: name=oracle-jdk{{ JDK_VERSION }}-installer update_cache=yes cache_valid_time=300
+- apt: name="oracle-java{{ JDK_VERSION }}-installer" update_cache=yes cache_valid_time=300
   become: yes
 
-- apt: name=oracle-java{{ JDK_VERSION }}-set-default update_cache=yes cache_valid_time=300
+- apt: name="oracle-java{{ JDK_VERSION }}-set-default" update_cache=yes cache_valid_time=300
   become: yes
   when: JDK_AS_DEFAULT
